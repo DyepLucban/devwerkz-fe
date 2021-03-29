@@ -1,15 +1,27 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import { getField, updateField } from 'vuex-map-fields'
+import { task } from './task'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
+const store = new Vuex.Store({
+  namespaced: true,
+  modules: {
+    task,
   },
-  mutations: {
+  state:{
+
+  },
+  getters: {
+      getField,
   },
   actions: {
+
   },
-  modules: {
+  mutations: {
+      updateField,
   }
 })
+
+export default store
